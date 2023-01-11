@@ -17,8 +17,7 @@ function renderCoffees(coffees) {
     return html;
 }
 
-function updateCoffees(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
+function updateCoffees() {
     let selectedRoast = roastSelection.value;
     let filteredCoffees = [];
     coffees.forEach(function(coffee) {
@@ -29,7 +28,21 @@ function updateCoffees(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 //We Need a Function to add coffee to the array
+// Jona's below
 
+function addCoffee(name,e) {
+    e.preventDefault();
+    let newCoffee = {
+        name: name,
+        roast: roastAdd,
+    }
+    coffees.push(newCoffee);
+    tbody.innerHTML = renderCoffees(newCoffee);
+}
+    console.log(addCoffee)
+
+
+// Jona's above'
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 let coffees = [
@@ -54,10 +67,15 @@ let coffees = [
 let tbody = document.querySelector('#coffees');
 
 // Needs to be the DOM manipulation with a function that can push an object to the the array.
+// Jona's edit's below
+let roastAdd = document.querySelector("#add-coffee-selection")
+let newCoffee = document.querySelector("#add-coffee")
+newCoffee.addEventListener('submit', addCoffee)
+// Jona's edits above ^
 
-let submitButton = document.querySelector('#submit');
+let selectCoffee = document.querySelector('#roast-selection');
 let roastSelection = document.querySelector('#roast-selection');
-
 tbody.innerHTML = renderCoffees(coffees);
 
-submitButton.addEventListener('click', updateCoffees);
+selectCoffee.addEventListener('change', updateCoffees);
+
