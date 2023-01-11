@@ -27,20 +27,32 @@ function updateCoffees() {
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
+function updateCoffeesSearch() {
+    tbody.innerHTML = '';
+    const selectedRoast = roastSelection.value;
+    const filterText = searchCoffee.value.toLowerCase();
+    // console.log(filterText);
+    let filteredCoffees = [];
+    coffees.forEach(function(coffee) {
+        if ((coffee.roast.toLowerCase().includes(filterText) === selectedRoast || selectedRoast === 'all') &&
+            coffee.name.toLowerCase().includes(filterText)) {
+            tbody.innerHTML = (renderCoffee(coffee));
+        }
+    });
+}
 //We Need a Function to add coffee to the array
 // Jona's below
 
-function addCoffee(name,e) {
-    e.preventDefault();
-    let newCoffee = {
-        name: name,
-        roast: roastAdd,
-    }
-    coffees.push(newCoffee);
-    tbody.innerHTML = renderCoffees(newCoffee);
-}
-    console.log(addCoffee)
-
+// function addCoffee(name,e) {
+//     e.preventDefault();
+//     let newCoffee = {
+//         name: name,
+//         roast: roastAdd,
+//     }
+//     roastSelection.push(newCoffee);
+//     tbody.innerHTML = renderCoffees(newCoffee);
+// }
+//     console.log(addCoffee)
 
 // Jona's above'
 
@@ -62,19 +74,20 @@ let coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+// Needs to be the DOM manipulation with a function that can push an object to  the array.
+// Jona's Search Coffee edit's below
 
-//appendChild to below DOM to coffees.name as a h3 and coffees.roast to p tag
-let tbody = document.querySelector('#coffees');
-
-// Needs to be the DOM manipulation with a function that can push an object to the the array.
-// Jona's edit's below
-let roastAdd = document.querySelector("#add-coffee-selection")
-let newCoffee = document.querySelector("#add-coffee")
-newCoffee.addEventListener('submit', addCoffee)
+let searchCoffee = document.querySelector("#coffee-selection")
+// console.log(searchCoffee)
+searchCoffee.addEventListener('keyup', updateCoffeesSearch )
 // Jona's edits above ^
 
+
+let tbody = document.querySelector('#coffees');
+
+
 let selectCoffee = document.querySelector('#roast-selection');
-let roastSelection = document.querySelector('#roast-selection');
+let roastSelection = document.querySelector('#roast-selection')
 tbody.innerHTML = renderCoffees(coffees);
 
 selectCoffee.addEventListener('change', updateCoffees);

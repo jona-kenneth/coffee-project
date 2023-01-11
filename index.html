@@ -19,6 +19,7 @@
 <!--Main Page Starts Here-->
 <main class="page-wrapper container-fluid">
     <div class="row d-flex justify-content-center">
+        <!--Search Form Starts Here-->
         <div class="col-3 d-inline">
             <form class="coffee-form">
                 <div class="input-group mb-0">
@@ -29,31 +30,37 @@
                         <option>medium</option>
                         <option>dark</option>
                     </select>
-                    <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                    <input id="coffee-selection" type="text" class="form-control" aria-label="Text input with segmented dropdown button">
                 </div>
-<!--                <button class="col-12" id="submit" type="submit">Search Existing Coffee</button>-->
+
             </form>
         </div>
+        <!--Search Form Ends Here-->
+        <!--Add Form Starts Here-->
         <div class="col-3">
             <form class="coffee-form ">
                 <div class="input-group mb-0">
-                    <label for="add-coffee-selection"></label>
-                    <select id="add-coffee-selection">
+                    <label for="add-roast-selection"></label>
+                    <select id="add-roast-selection">
                         <option>light</option>
                         <option>medium</option>
                         <option>dark</option>
                     </select>
-                    <input id="add-coffee" type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                    <input id="add-coffee" type="text" class="form-control"
+                           aria-label="Text input with segmented dropdown button">
                 </div>
                 <button class="col-8" id="submit-new-coffee" type="submit">Submit New Coffee</button>
             </form>
         </div>
+        <!--Add Form Ends Here-->
     </div>
-        <div class="row d-flex justify-content-center">
-            <div class="coffee-display col-8 mt-4">
-                <div id="coffees"></div>
-            </div>
+    <!-- Display Row Starts Here-->
+    <div class="row d-flex justify-content-center">
+        <div class="coffee-display col-8 mt-4">
+            <div id="coffees"></div>
         </div>
+    </div>
+    <!-- Display Row Ends Here-->
 </main>
 <!--Main Page Ends Here-->
 <script src="main.js"></script>
