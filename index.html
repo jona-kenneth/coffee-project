@@ -11,18 +11,16 @@
 <body>
 <!--Navbar Starts Here-->
 <nav class="navbar navbar-light bg-light sticky-top shadow">
-    <div class="container-fluid ">
-        <div class="navbar-brand col-12 d-flex justify-content-center">
-            <h1>Coffee!</h1>
-        </div>
+    <div class="navbar-brand col-12 d-flex justify-content-center">
+        <h1>Coffee!</h1>
     </div>
 </nav>
 <!--Navbar Ends Here-->
 <!--Main Page Starts Here-->
 <main class="page-wrapper container-fluid">
     <div class="row d-flex justify-content-center">
-        <div class="col-6 d-inline">
-            <form>
+        <div class="col-3 d-inline">
+            <form class="coffee-form">
                 <div class="input-group mb-0">
                     <label for="roast-selection"></label>
                     <select id="roast-selection">
@@ -33,13 +31,13 @@
                     </select>
                     <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
                 </div>
-                <button class="col-12 mb-3" id="submit" type="submit">Search Existing Coffee</button>
+                <button class="col-12" id="submit" type="submit">Search Existing Coffee</button>
             </form>
         </div>
-        <div class="col-6">
-            <form>
+        <div class="col-3">
+            <form class="coffee-form">
                 <div class="input-group mb-0">
-                    <label for="roast-selection"></label>
+<!--                    <label for="roast-selection"></label>-->
                     <select id="roast-selection">
                         <option>light</option>
                         <option>medium</option>
@@ -47,11 +45,15 @@
                     </select>
                     <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
                 </div>
-                <button class="col-12 mb-3" id="submit" type="submit">Submit New Coffee</button>
+                <button class="col-12" id="submit" type="submit">Submit New Coffee</button>
             </form>
         </div>
-                <div class="col-6 " id="coffees"></div>
     </div>
+        <div class="row d-flex justify-content-center">
+            <div class="coffee-display col-8 mt-4">
+                <div id="coffees"></div>
+            </div>
+        </div>
 </main>
 <!--Main Page Ends Here-->
 <script src="main.js"></script>
