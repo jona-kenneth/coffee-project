@@ -6,8 +6,12 @@ body {
 }
 
 .coffee-form {
-    border: 1px solid black;
+    border: none;
     margin-top: 30px;
+}
+
+#roast-selection {
+    border: none;
 }
 
 .coffee-display {

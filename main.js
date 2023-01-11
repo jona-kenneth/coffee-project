@@ -29,11 +29,6 @@ function updateCoffees(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 //We Need a Function to add coffee to the array
-function addCoffees(e){
-    e.preventDefault()
-    let coffeeToAdd =
-    coffees.push
-}
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
