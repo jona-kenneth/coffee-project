@@ -1,9 +1,23 @@
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
+body {
+    background-color: bisque;
+}
+.navbar {
+    background-color: lightblue !important;
 }
 
-td, th {
+.coffee-form {
     border: 1px solid black;
-    padding: 5px 10px;
+    margin-top: 30px;
+}
+
+.coffee-display {
+    background-color: white;
+}
+
+#coffees p {
+    color: red;
+}
+
+#coffees h3 {
+    color: green;
 }
