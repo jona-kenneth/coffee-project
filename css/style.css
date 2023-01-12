@@ -21,7 +21,6 @@ select{
 }
 
 #coffees p {
-    color: red;
 }
 
 #coffees h3 {
@@ -29,15 +28,20 @@ select{
 }
 
 #coffee-search-bars {
-    padding-top: 8em;
+    padding-top: 0;
 }
 
 #search-spacing {
     width: 33%;
+    padding-top: 2em;;
     padding-left: 2em;
     padding-right: 2em;
 }
 
 #coffee-selector {
     width: 33%;
+}
+h3 {
+    display: flex;
+    justify-content: right;
 }
