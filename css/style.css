@@ -1,6 +1,6 @@
 body {
     background-color: bisque;
-    background-image: url("pexels-lukas-942802.jpg");
+    background-image: url("../img/pexels-lukas-942802.jpg");
     background-size: 115rem 66rem;
 }
 .navbar {
@@ -12,7 +12,7 @@ body {
     margin-top: 30px;
 }
 
-#roast-selection {
+select{
     border: none;
 }
 
