@@ -1,47 +1,62 @@
 body {
-    background-color: bisque;
-    background-image: url("../img/pexels-lukas-942802.jpg");
-    background-size: 115rem 66rem;
-}
-.navbar {
-    background-color: lightblue !important;
+    background-image: url("../img/coffee-cup-with-bean.jpg");
+    background-size: cover;
+
 }
 
-.coffee-form {
-    border: none;
-    margin-top: 30px;
+nav {
+    background-color: rgb(164, 102, 70);
+
 }
 
-select{
-    border: none;
-}
-
-.coffee-display {
-    background-color: #fbfbfb;
-}
-
-#coffees p {
-}
-
-#coffees h3 {
-    color: green;
-}
+/*Form-Input-Button Start*/
 
 #coffee-search-bars {
-    padding-top: 0;
+    padding-left: 15em;
+    margin-top: 5em;
+    margin-right: 0;
+}
+select {
+    border: none;
+    border-radius: .375em !important;
 }
 
-#search-spacing {
-    width: 33%;
-    padding-top: 2em;;
-    padding-left: 2em;
-    padding-right: 2em;
+input {
+    border: none !important;
 }
 
-#coffee-selector {
-    width: 33%;
+button {
+    color: rgb(164, 102, 70);
+    background-color: bisque;
+    border: none;
 }
-h3 {
-    display: flex;
-    justify-content: right;
+/*Form-Input-Button End*/
+
+/*Coffee Display and Animation Start*/
+
+#coffees h3 {
+    color: rgb(164, 102, 70);
 }
+
+.coffee {
+    animation: 2s anim-lineUp ease;
+}
+
+@keyframes anim-lineUp {
+    0% {
+        opacity: 0;
+        transform: translateY(80%);
+    }
+    20% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+/*Coffee Display and Animation End*/
