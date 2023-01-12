@@ -1,3 +1,4 @@
+(function () {
 "use strict"
 
 function renderCoffee(coffee) {
@@ -17,44 +18,41 @@ function renderCoffees(coffees) {
     return html;
 }
 
-function updateCoffees() {
-    let selectedRoast = roastSelection.value;
-    let filteredCoffees = [];
-    coffees.forEach(function(coffee) {
-        if (selectedRoast === "all" || selectedRoast === coffee.roast) {
-            filteredCoffees.push(coffee);
-        }
-    });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
-}
-function updateCoffeesSearch() {
-    tbody.innerHTML = '';
-    const selectedRoast = roastSelection.value;
-    const filterText = searchCoffee.value.toLowerCase();
-    // console.log(filterText);
-    let filteredCoffees = [];
-    coffees.forEach(function(coffee) {
-        if ((coffee.roast.toLowerCase().includes(filterText) === selectedRoast || selectedRoast === 'all') &&
-            coffee.name.toLowerCase().includes(filterText)) {
-            tbody.innerHTML = (renderCoffee(coffee));
-        }
-    });
-}
+
 //We Need a Function to add coffee to the array
 // Jona's below
+function updateCoffeesSearch(e) {
+    e.preventDefault()
+    let coffeeRoast = roastSelection.value;
+    let coffeeSearchInput = searchCoffee.value.toLowerCase();
+    let searchedCoffees = [];
+    if ((coffeeRoast === "all") && (coffeeSearchInput === "")) {
+            coffees.forEach(function (coffee){
+                    searchedCoffees.push(coffee);
 
-// function addCoffee(name,e) {
-//     e.preventDefault();
-//     let newCoffee = {
-//         name: name,
-//         roast: roastAdd,
-//     }
-//     roastSelection.push(newCoffee);
-//     tbody.innerHTML = renderCoffees(newCoffee);
-// }
-//     console.log(addCoffee)
+                });
+    }else if((coffeeRoast === "all") && (coffeeSearchInput !== "")){
+        coffees.forEach(function (coffee){
+            if(coffee.name.toLowerCase().includes(coffeeSearchInput)){
+                searchedCoffees.push(coffee)
+            }
+        });
+    }else if(coffeeRoast !== "all"){
+        coffees.forEach(function(coffee){
+            if(coffee.roast === coffeeRoast && coffeeSearchInput === ''){
+                searchedCoffees.push(coffee);
+            }else if(coffee.roast === coffeeRoast && coffeeSearchInput !== ''){
+                if(coffee.name.toLowerCase().includes(coffeeSearchInput)){
+                    searchedCoffees.push(coffee)
+                }
+            }
+        });
+    }
 
-// Jona's above'
+    tbody.innerHTML = (renderCoffees(searchedCoffees));
+}
+
+// Jona's above ^
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 let coffees = [
@@ -74,21 +72,14 @@ let coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-// Needs to be the DOM manipulation with a function that can push an object to  the array.
-// Jona's Search Coffee edit's below
-
-let searchCoffee = document.querySelector("#coffee-selection")
-// console.log(searchCoffee)
-searchCoffee.addEventListener('keyup', updateCoffeesSearch )
-// Jona's edits above ^
-
-
+//Variables
 let tbody = document.querySelector('#coffees');
-
-
-let selectCoffee = document.querySelector('#roast-selection');
+let searchCoffee = document.querySelector("#search-coffee")
 let roastSelection = document.querySelector('#roast-selection')
+
+//Query Selectors
+searchCoffee.addEventListener('keyup', updateCoffeesSearch );
+roastSelection.addEventListener('change', updateCoffeesSearch)
 tbody.innerHTML = renderCoffees(coffees);
 
-selectCoffee.addEventListener('change', updateCoffees);
-
+})();
