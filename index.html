@@ -1,12 +1,17 @@
 <!DOCTYPE html>
+<!--Start of HTML-->
 <html lang="en">
+<!--Start of Head-->
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <!--CSS and Bootstrap Style Start-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <!--CSS and Bootstrap Style End-->
 </head>
+<!--End of Head-->
 <!--Start of the Body-->
 <body>
 <!--Navbar Starts Here-->
@@ -18,11 +23,10 @@
 <!--Navbar Ends Here-->
 <!--Main Page Starts Here-->
 <main class="page-wrapper container-fluid">
-    <div class="row d-flex justify-content-center" id="coffee-search-bars">
+    <div class="row d-flex justify-content-center " id="coffee-search-bars">
         <!--Search Form Starts Here-->
-        <div class="col-3 d-inline" id="coffee-selector">
+        <div class="col-3 d-inline d-flex align-items-center" id="coffee-selector">
             <form class="coffee-form">
-                <h3>Search Coffee</h3>
                 <div class="input-group mb-0">
                     <label for="roast-selection"></label>
                     <select id="roast-selection">
@@ -32,17 +36,15 @@
                         <option>dark</option>
                     </select>
                     <input id="search-coffee" type="text" class="form-control"
-                           aria-label="Text input with segmented dropdown button">
+                           aria-label="Text input with segmented dropdown button" placeholder="Search Coffee">
                 </div>
-
             </form>
         </div>
         <!--Search Form Ends Here-->
         <!--Add Form Starts Here-->
         <div class="col-3" id="search-spacing">
             <form class="coffee-form-new ">
-                <h3>Add Coffee</h3>
-                <div class="input-group mb-0">
+                <div class="input-group mb-0 ">
                     <label for="add-roast-selection"></label>
                     <select id="add-roast-selection">
                         <option>light</option>
@@ -50,10 +52,9 @@
                         <option>dark</option>
                     </select>
                     <input id="add-coffee" type="text" class="form-control"
-                           aria-label="Text input with segmented dropdown button">
-
+                           aria-label="Text input with segmented dropdown button" placeholder="Add Coffee">
+                    <button class="" id="submit-new-coffee" type="submit">Submit</button>
                 </div>
-                <button class="col-2" id="submit-new-coffee" type="submit">Submit</button>
             </form>
         </div>
         <!--Add Form Ends Here-->
@@ -77,3 +78,4 @@
 </body>
 <!--End of the Body-->
 </html>
+<!--End of HTML-->
