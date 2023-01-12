@@ -69,6 +69,8 @@
         coffees.push(filteredCoffees)
         updateCoffeesSearch()
     }
+
+
 // End of Function for Add Coffee
 
 // Start of Array with Objects
