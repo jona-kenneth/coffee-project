@@ -1,5 +1,7 @@
 body {
     background-color: bisque;
+    background-image: url("pexels-lukas-942802.jpg");
+    background-size: 83rem 67rem;
 }
 .navbar {
     background-color: lightblue !important;
@@ -15,7 +17,7 @@ body {
 }
 
 .coffee-display {
-    background-color: white;
+    background-color: #fbfbfb;
 }
 
 #coffees p {
@@ -24,4 +26,18 @@ body {
 
 #coffees h3 {
     color: green;
+}
+
+#coffee-search-bars {
+    padding-top: 8em;
+}
+
+#search-spacing {
+    width: 33%;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+#coffee-selector {
+    width: 33%;
 }
