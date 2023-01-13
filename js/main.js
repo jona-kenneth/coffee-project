@@ -19,6 +19,7 @@
         }
         return html;
     }
+
 // End of Function for Dropdown in Search Coffee
 
 // Start of Function for Search Coffee
@@ -26,30 +27,18 @@
         let coffeeRoast = roastSelection.value;
         let coffeeSearchInput = searchCoffee.value.toLowerCase();
         let searchedCoffees = [];
-        if ((coffeeRoast === "all") && (coffeeSearchInput === "")) {
-            coffees.forEach(function (coffee) {
+        coffees.forEach(function (coffee) {
+            if ((coffeeRoast === "all" || coffee.roast === coffeeRoast) && (coffeeSearchInput === "")) {
                 searchedCoffees.push(coffee);
-
-            });
-        } else if ((coffeeRoast === "all") && (coffeeSearchInput !== "")) {
-            coffees.forEach(function (coffee) {
+            } else if ((coffeeRoast === "all" || coffee.roast === coffeeRoast) && (coffeeSearchInput !== "")) {
                 if (coffee.name.toLowerCase().includes(coffeeSearchInput)) {
                     searchedCoffees.push(coffee)
                 }
-            });
-        } else if (coffeeRoast !== "all") {
-            coffees.forEach(function (coffee) {
-                if (coffee.roast === coffeeRoast && coffeeSearchInput === '') {
-                    searchedCoffees.push(coffee);
-                } else if (coffee.roast === coffeeRoast && coffeeSearchInput !== '') {
-                    if (coffee.name.toLowerCase().includes(coffeeSearchInput)) {
-                        searchedCoffees.push(coffee)
-                    }
-                }
-            });
-        }
+            }
+        });
         tbody.innerHTML = (renderCoffees(searchedCoffees));
-    };
+    }
+
 // End of Function for Search Coffee
 
 // Start of Function for Add Coffee
@@ -68,7 +57,8 @@
         }
         coffees.push(filteredCoffees)
         updateCoffeesSearch()
-    };
+    }
+
 // End of Function for Add Coffee
 
 // Start of Array with Objects
@@ -89,6 +79,7 @@
         {id: 13, name: 'Italian', roast: 'dark'},
         {id: 14, name: 'French', roast: 'dark'},
     ];
+
 // End of Array with Objects
 
 //Variables Start
@@ -98,6 +89,7 @@
     let addCoffee = document.querySelector("#add-coffee");
     let addRoast = document.querySelector("#add-roast-selection");
     let submitCoffeeForm = document.querySelector('.coffee-form-new');
+
 //Variables End
 
 //Query Selectors Start
@@ -105,6 +97,7 @@
     roastSelection.addEventListener("change", updateCoffeesSearch);
     submitCoffeeForm.addEventListener("submit", updateCoffeeSelection);
     tbody.innerHTML = renderCoffees(coffees);
+
 //Query Selectors End
 
 })();

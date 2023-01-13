@@ -23,6 +23,7 @@ nav {
     font-style: italic;
 }
 .cafe-logo {
+    color: rgb(63, 41, 26);
     border-bottom: 10px double rgb(164, 102, 70);
     border-right: 10px double rgb(164, 102, 70);
     border-left: 10px double rgb(164, 102, 70);
