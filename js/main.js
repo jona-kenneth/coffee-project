@@ -49,7 +49,7 @@
             });
         }
         tbody.innerHTML = (renderCoffees(searchedCoffees));
-    }
+    };
 // End of Function for Search Coffee
 
 // Start of Function for Add Coffee
@@ -68,9 +68,7 @@
         }
         coffees.push(filteredCoffees)
         updateCoffeesSearch()
-    }
-
-
+    };
 // End of Function for Add Coffee
 
 // Start of Array with Objects
@@ -95,17 +93,17 @@
 
 //Variables Start
     let tbody = document.querySelector("#coffees");
-    let roastSelection = document.querySelector("#roast-selection")
-    let searchCoffee = document.querySelector("#search-coffee")
-    let addCoffee = document.querySelector("#add-coffee")
-    let addRoast = document.querySelector("#add-roast-selection")
-    let submitCoffeeForm = document.querySelector('.coffee-form-new')
+    let roastSelection = document.querySelector("#roast-selection");
+    let searchCoffee = document.querySelector("#search-coffee");
+    let addCoffee = document.querySelector("#add-coffee");
+    let addRoast = document.querySelector("#add-roast-selection");
+    let submitCoffeeForm = document.querySelector('.coffee-form-new');
 //Variables End
 
 //Query Selectors Start
     searchCoffee.addEventListener("keyup", updateCoffeesSearch);
-    roastSelection.addEventListener("change", updateCoffeesSearch)
-    submitCoffeeForm.addEventListener("submit", updateCoffeeSelection)
+    roastSelection.addEventListener("change", updateCoffeesSearch);
+    submitCoffeeForm.addEventListener("submit", updateCoffeeSelection);
     tbody.innerHTML = renderCoffees(coffees);
 //Query Selectors End
 
