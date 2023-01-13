@@ -8,10 +8,8 @@
         html += '<h3>' + coffee.name + '</h3>';
         html += '<p>' + coffee.roast + '</p>';
         html += '</div>';
-
         return html;
     }
-
     function renderCoffees(coffees) {
         let html = '';
         for (let i = coffees.length - 1; i >= 0; i--) {
@@ -47,11 +45,7 @@
         let selectedRoast = addRoast.value;
         let newCoffee = addCoffee.value;
         let coffeeID = coffees.length + 1;
-        let filteredCoffees = {
-            id: coffeeID,
-            name: newCoffee,
-            roast: selectedRoast
-        }
+        let filteredCoffees = {id: coffeeID, name: newCoffee, roast: selectedRoast}
         if (newCoffee === "") {
             return;
         }
