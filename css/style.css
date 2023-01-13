@@ -8,7 +8,7 @@ nav {
     background-color: rgb(226 163 135);
     animation: 1s anim-lineUp ease;
     font-family: "sofia", sans-serif;
-    font-size: 4em;
+    font-size: 3em;
     font-weight: bold;
     font-style: italic;
 }
@@ -16,14 +16,14 @@ nav {
 /*Form-Input-Button Start*/
 
 #coffee-search-bars {
-    padding-left: 19em;
+    padding-left: 13em;
     margin-top: 5em;
     margin-right: 0;
     animation: 3s anim-lineUp ease;
 }
 
 #search-spacing.col-3{
-    width: 22.7%;
+    width: 27.5%;
 }
 
 select {
