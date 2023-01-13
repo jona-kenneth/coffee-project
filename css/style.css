@@ -25,7 +25,7 @@ nav {
 .cafe-logo {
     border-bottom: 10px double rgb(164, 102, 70);
     border-right: 10px double rgb(164, 102, 70);
-    border-left: 10px double rgba(164, 102, 70, 0.71);
+    border-left: 10px double rgb(164, 102, 70);
     width: 99.5%;
 }
 /*Form-Input-Button Start*/
