@@ -1,3 +1,4 @@
+/* Body-Nav Styling Start*/
 body {
     background-image: url("../img/coffee-cup-with-bean.jpg");
     background-size: cover;
@@ -22,6 +23,7 @@ nav {
     font-weight: bold;
     font-style: italic;
 }
+
 .cafe-logo {
     color: rgb(63, 41, 26);
     border-bottom: 10px double rgb(164, 102, 70);
@@ -29,8 +31,10 @@ nav {
     border-left: 10px double rgb(164, 102, 70);
     width: 99.5%;
 }
-/*Form-Input-Button Start*/
 
+/* Body-Nav Styling Start*/
+
+/*Form-Input-Button Start*/
 #coffee-search-bars {
     padding-left: 13em;
     margin-top: 5em;
@@ -57,10 +61,10 @@ button {
     border: none;
     border-radius: 10%;
 }
+
 /*Form-Input-Button End*/
 
 /*Coffee Display and Animation Start*/
-
 #coffees h3 {
     color: rgb(164, 102, 70);
 }
@@ -86,4 +90,5 @@ button {
         transform: translateY(0%);
     }
 }
+
 /*Coffee Display and Animation End*/
