@@ -5,17 +5,27 @@ body {
 }
 
 nav {
-    background-color: rgb(164, 102, 70);
-
+    background-color: rgb(226 163 135);
+    animation: 1s anim-lineUp ease;
+    font-family: "sofia", sans-serif;
+    font-size: 4em;
+    font-weight: bold;
+    font-style: italic;
 }
 
 /*Form-Input-Button Start*/
 
 #coffee-search-bars {
-    padding-left: 15em;
+    padding-left: 19em;
     margin-top: 5em;
     margin-right: 0;
+    animation: 3s anim-lineUp ease;
 }
+
+#search-spacing.col-3{
+    width: 22.7%;
+}
+
 select {
     border: none;
     border-radius: .375em !important;
@@ -29,6 +39,7 @@ button {
     color: rgb(164, 102, 70);
     background-color: bisque;
     border: none;
+    border-radius: 10%;
 }
 /*Form-Input-Button End*/
 
@@ -39,7 +50,7 @@ button {
 }
 
 .coffee {
-    animation: 2s anim-lineUp ease;
+    animation: 3s anim-lineUp ease;
 }
 
 @keyframes anim-lineUp {
